@@ -37,56 +37,16 @@ class _Program(object):
         number of arguments that the function takes, the functions must match
         those in the `function_set` parameter.
 
-    init_depth : tuple of two ints
-        The range of tree depths for the initial population of naive formulas.
-        Individual trees will randomly choose a maximum depth from this range.
-        When combined with `init_method='half and half'` this yields the well-
-        known 'ramped half and half' initialization method.
-
-    init_method : str
-        - 'grow' : Nodes are chosen at random from both functions and
-          terminals, allowing for smaller trees than `init_depth` allows. Tends
-          to grow asymmetrical trees.
-        - 'full' : Functions are chosen until the `init_depth` is reached, and
-          then terminals are selected. Tends to grow 'bushy' trees.
-        - 'half and half' : Trees are grown through a 50/50 mix of 'full' and
-          'grow', making for a mix of tree shapes in the initial population.
-
     n_features : int
         The number of features in `X`.
 
-    const_range : tuple of two floats
-        The range of constants to include in the formulas.
-
     metric : _Fitness object
         The raw fitness metric.
-
-    p_point_replace : float
-        The probability that any given node will be mutated during point
-        mutation.
-
-    parsimony_coefficient : float
-        This constant penalizes large programs by adjusting their fitness to
-        be less favorable for selection. Larger values penalize the program
-        more which can control the phenomenon known as 'bloat'. Bloat is when
-        evolution is increasing the size of programs without a significant
-        increase in fitness, which is costly for computation time and makes for
-        a less understandable final result. This parameter may need to be tuned
-        over successive runs.
 
     random_state : RandomState instance
         The random number generator. Note that ints, or None are not allowed.
         The reason for this being passed is that during parallel evolution the
         same program object may be accessed by multiple parallel processes.
-
-    transformer : _Function object, optional (default=None)
-        The function to transform the output of the program to probabilities,
-        only used for the SymbolicClassifier.
-
-    feature_names : list, optional (default=None)
-        Optional list of feature names, used purely for representations in
-        the `print` operation or `export_graphviz`. If None, then X0, X1, etc
-        will be used for representations.
 
     program : list, optional (default=None)
         The flattened tree representation of the program. If None, a new naive
@@ -102,11 +62,6 @@ class _Program(object):
 
     fitness_ : float
         The penalized fitness of the individual program.
-
-    oob_fitness_ : float
-        The out-of-bag raw fitness of the individual program for the held-out
-        samples. Only present when sub-sampling was used in the estimator by
-        specifying `max_samples` < 1.0.
 
     parents : dict, or None
         If None, this is a naive random program from the initial population.
