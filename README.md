@@ -16,7 +16,22 @@ Make sure you have installed the following Python version and packages before st
 * warnings
 * time
 * random
-### Example
+### Getting started
+SteinerGP supports the following method to try out the regression task on your own data:
 ```
-python exapmle.py
+from SteinerGP.genetic import SymbolicRegressor
+
+rng = check_random_state(0)
+# Create some data
+X_train = rng.uniform(-1, 1, 100).reshape(50, 2)
+y_train = X_train[:, 0]**2 - np.sin(X_train[:, 1]) + X_train[:, 1] - 1
+
+# Create the model
+est_gp = SymbolicRegressor()
+
+# Fit the model
+est_gp.fit(X_train, y_train)
+
+# View the best expression
+print(est_gp._program)
 ```
