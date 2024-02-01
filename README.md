@@ -5,7 +5,7 @@ Steiner Genetic Programming (SteinerGP) is a novel symbolic regression approach 
 ## 2. Code
 The codes are based on GPlearn's framework (https://github.com/trevorstephens/gplearn), where the computation of semantic similarity is in `SteinerGP._Program`, the estimation of generalized Pareto distribution is in `SteinerGP.genetic.BaseSymbolic`.
 ### Requirements
-Make sure you have installed the following Python version and packages before start running our code:
+Make sure you have installed the following Python packages before start running our code:
 * scikit-learn 
 * numpy
 * numbers
