@@ -1,4 +1,4 @@
-from SteinerGP.genetic import SymbolicRegressor
+from SGGP.genetic import SymbolicRegressor
 from sklearn.utils.random import check_random_state
 import numpy as np
 
