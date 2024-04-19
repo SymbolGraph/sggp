@@ -1,6 +1,6 @@
 # Symbol Graph Genetic Programming
 ## 1. Introduction
-Symbol Graph Genetic Programming (SGGP) is a novel symbolic regression approach that diverges from traditional GP methods by employing a semantic operator for the generation of new individuals. SGGP first initializes the population within the specially designed symbol graph (We employ the symbol graph to prove that the SR problem is NP-hard). It then utilizes the semantic operator to generate new populations. The semantic operator employs the generalized Pareto distribution based on semantic similarity to assess the likelihood that each edge (subspace) in this graph will yield superior individuals. Guided by these probabilistic evaluations, SGGP strategically samples new individuals in its quest to discover accurate mathematical expressions. Comparative experiments conducted across three different benchmark types demonstrate that SGGP outperforms 21 existing baseline SR methods, achieving greater accuracy and conciseness in the mathematical expressions it generates.
+Symbol Graph Genetic Programming (SGGP) is a novel symbolic regression approach that diverges from traditional GP methods by employing a semantic operator for the generation of new individuals. SGGP first initializes the population within the specially designed symbol graph (We employ the symbol graph to prove that the SR problem is NP-hard:[Paper](../appendix/Symbolic Rrgression is NP-hard.pdf)). It then utilizes the semantic operator to generate new populations. The semantic operator employs the generalized Pareto distribution based on semantic similarity to assess the likelihood that each edge (subspace) in this graph will yield superior individuals. Guided by these probabilistic evaluations, SGGP strategically samples new individuals in its quest to discover accurate mathematical expressions. Comparative experiments conducted across three different benchmark types demonstrate that SGGP outperforms 21 existing baseline SR methods, achieving greater accuracy and conciseness in the mathematical expressions it generates.
 
 ## 2. Code
 The codes are based on GPlearn's framework (https://github.com/trevorstephens/gplearn), where the computation of semantic similarity is in `SGGP._Program`, the estimation of generalized Pareto distribution is in `SGGP.genetic.BaseSymbolic`.
@@ -36,6 +36,7 @@ est_gp.fit(X_train, y_train)
 print(est_gp._program)
 ```
 ## 3. Experiment
-We conducted a comprehensive evaluation of SGGP’s performance using three distinct types of benchmarks: PMLB, FSRB, and Strogatz. The results of SGGP are as follows. (For more detailed results, please refer to `SGGP-APPENDIX`)
-
+We conducted a comprehensive evaluation of SGGP’s performance using three distinct types of benchmarks: PMLB, FSRB, and Strogatz. The results of SGGP are as follows. (For more detailed results, please refer to [Results](../appendix/SSGP_Results.pdf))
+<img src="https://github.com/SymbolGraph/sggp/blob/main/appendix/Results%20on%20FSRB%20and%20Strogatz%20.png">
+<img src="https://github.com/SymbolGraph/sggp/blob/main/appendix/Results%20on%20PMLB.png">
 Compared with 14 symbolic regression methods and 7 other ML methods, the results clearly demonstrate that SGGP surpasses these baseline algorithms in terms of the R^2 test, model size, and solution recovery rate. 
