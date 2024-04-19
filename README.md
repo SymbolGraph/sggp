@@ -36,7 +36,7 @@ est_gp.fit(X_train, y_train)
 print(est_gp._program)
 ```
 ## 3. Experiment
-We conducted a comprehensive evaluation of SGGP’s performance using three distinct types of benchmarks: [PMLB](https://epistasislab.github.io/pmlb/), [FSRB](https://space.mit.edu/home/tegmark/aifeynman.html), and [Strogatz](https://github.com/lacava/ode-strogatz). The results of SGGP are as follows. (For more detailed results, please refer to [Results](../appendix/SSGP_Results.pdf))
+We conducted a comprehensive evaluation of SGGP’s performance using three distinct types of benchmarks: [PMLB](https://epistasislab.github.io/pmlb/), [FSRB](https://space.mit.edu/home/tegmark/aifeynman.html), and [Strogatz](https://github.com/lacava/ode-strogatz). The results of SGGP are as follows. (For more detailed results, please refer to [Results](https://github.com/SymbolGraph/sggp/blob/main/appendix/SGGP_Results.pdf))
 <img src="https://github.com/SymbolGraph/sggp/blob/main/appendix/Results%20on%20FSRB%20and%20Strogatz%20.png">
 <img src="https://github.com/SymbolGraph/sggp/blob/main/appendix/Results%20on%20PMLB.png">
 
