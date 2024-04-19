@@ -36,3 +36,6 @@ est_gp.fit(X_train, y_train)
 print(est_gp._program)
 ```
 ## 3. Experiment
+We conducted a comprehensive evaluation of SGGP’s performance using three distinct types of benchmarks: PMLB, FSRB, and Strogatz. The results of SGGP are as follows. (For more detailed results, please refer to `SGGP-APPENDIX`)
+
+Compared with 14 symbolic regression methods and 7 other ML methods, the results clearly demonstrate that SGGP surpasses these baseline algorithms in terms of the R^2 test, model size, and solution recovery rate. 
