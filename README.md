@@ -3,7 +3,7 @@
 Symbol Graph Genetic Programming (SGGP) is a novel symbolic regression approach that diverges from traditional GP methods by employing a semantic operator for the generation of new individuals. SGGP first initializes the population within the specially designed symbol graph (We employ the symbol graph to prove that the SR problem is NP-hard:[Paper](https://arxiv.org/pdf/2404.13820.pdf)). It then utilizes the semantic operator to generate new populations. The semantic operator employs the generalized Pareto distribution based on semantic similarity to assess the likelihood that each edge (subspace) in this graph will yield superior individuals. Guided by these probabilistic evaluations, SGGP strategically samples new individuals in its quest to discover accurate mathematical expressions. Comparative experiments conducted across three different benchmark types demonstrate that SGGP outperforms 21 existing baseline SR methods, achieving greater accuracy and conciseness in the mathematical expressions it generates.
 
 ## 2. Code
-The codes are based on GPlearn's framework (https://github.com/trevorstephens/gplearn), where the computation of semantic similarity is in `SGGP._Program`, the estimation of generalized Pareto distribution is in `SGGP.genetic.BaseSymbolic`.
+The codes are based on [GPlearn](https://github.com/trevorstephens/gplearn)'s framework, where the computation of semantic similarity is in `SGGP._Program`, the estimation of generalized Pareto distribution is in `SGGP.genetic.BaseSymbolic`.
 ### Requirements
 Make sure you have installed the following Python packages before start running our code:
 * scikit-learn 
